@@ -1,0 +1,159 @@
+## POST keywords/create
+
+### Resource URL
+
+https://xxx.jetyun.com/1.1/keywords/create
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+keyword       | 关键字         | 
+engines       | 搜索引擎        | 
+start_time    | 开始时间		   | null为添加后即开始
+end_time      | 结束时间		   | null为添加后即无失效日期
+
+### Example Request
+
+```
+[
+	{
+		keyword:"火灾",
+		engines:["google","baidu","bing"],
+		start_time:"1430969776"
+		end_time:"1430969776"
+	},
+	{
+		keyword:"反恐",
+		engines:["google","baidu","bing"],
+		start_time:"1430969776"
+		end_time:"1430969776"
+	}，
+	... ...
+]
+
+```
+
+### Example Result
+
+```
+{	
+	status: "success/error"
+	error_msg: "key error"
+}
+
+```
+
+---
+
+## POST keywords/update
+
+### Resource URL
+
+https://xxx.jetyun.com/1.1/keywords/update
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+id            | id            |
+keyword       | 关键字         | 
+engines       | 搜索引擎        | 
+start_time    | 开始时间		   | null为添加后即开始
+end_time      | 结束时间		   | null为添加后即无失效日期
+
+### Example Request
+
+```
+{
+	id: "12345678"
+	keyword:"火灾",
+	engines:["google","baidu","bing"],
+	start_time:"1430969776"
+	end_time:"1430969776"
+}
+
+```
+
+### Example Result
+
+```
+{	
+	status: "success/error"
+	error_msg: "key error"
+}
+
+```
+
+---
+
+## POST keywords/destroy/:id
+
+### Resource URL
+
+https://xxx.jetyun.com/1.1/keywords/destroy/:id
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+id            | id            |
+
+
+### Example Request
+
+```
+{
+	id: "12345678"
+}
+
+```
+
+### Example Result
+
+```
+{	
+	status: "success/error"
+	error_msg: "key error"
+}
+
+```
+
+---
+
+## GET keywords/show/:id
+
+### Resource URL
+
+https://xxx.jetyun.com/1.1/keywords/show/:id
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+id            | id            |
+
+
+### Example Request
+
+```
+GET
+
+https://xxx.jetyun.com/1.1/keywords/show.json?id=210462857140252672
+
+```
+
+### Example Result
+
+```
+{
+	id: "210462857140252672"
+	keyword:"火灾",
+	engines:["google","baidu","bing"],
+	start_time:"1430969776"
+	end_time:"1430969776"
+}
+
+```
+
+
