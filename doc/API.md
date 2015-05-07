@@ -156,4 +156,69 @@ https://xxx.jetyun.com/1.1/keywords/show.json?id=210462857140252672
 
 ```
 
+# 采集
+
+## 关键字
+
+### Resource URL
+
+/path/casperjs search_xxxx.js keyword="key" page-num="num"
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+keyword       | 关键字         | 
+page-num      | 爬取页数       | 
+
+### Example Request
+
+/path/casperjs search_baidu.js keyword="火灾" page-num="2"
+
+### Example Result
+
+| 退出状态 | 字段类型 | 字段说明 |
+|----------|----------|----------|
+| success  |        0 | 正常退出 |
+| error    |        1 | 异常退出 |
+
+### Example Task
+
+```
+{
+	keyword:"",
+	url:["http://aaaaa","http://bb.com","http://cc.com"]
+}
+
+```
+
+---
+
+## 获取页面
+
+### Resource URL
+
+/path/casperjs  crawler-page.js url="url" path="path"
+
+### Parameters
+
+字段名称       | 中文名称        | 备注
+:-----------: | :-----------: | :-----------:
+url            | 爬取地址           |
+path       | 存储路径         | 
+
+### Example Request
+
+/path/casperjs  crawler-page.js url="http://news.sina.com/" path="baidu/"
+
+### Example Result
+
+| 退出状态 | 字段类型 | 字段说明 |
+|----------|----------|----------|
+| success  |        0 | 正常退出 |
+| error    |        1 | 异常退出 |
+
+
+
+
 
