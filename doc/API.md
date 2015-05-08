@@ -1,8 +1,8 @@
-## POST keywords/create
+## POST keywords
 
 ### Resource URL
 
-https://xxx.jetyun.com/1.1/keywords/create
+https://xxx.jetyun.com/1.1/keywords
 
 ### Parameters
 
@@ -14,6 +14,9 @@ start_time    | 开始时间		   | null为添加后即开始
 end_time      | 结束时间		   | null为添加后即无失效日期
 
 ### Example Request
+
+POST
+https://xxx.jetyun.com/1.1/keywords
 
 ```
 [
@@ -46,11 +49,11 @@ end_time      | 结束时间		   | null为添加后即无失效日期
 
 ---
 
-## POST keywords/update
+## PUT keywords/:id
 
 ### Resource URL
 
-https://xxx.jetyun.com/1.1/keywords/update
+https://xxx.jetyun.com/1.1/keywords/:id
 
 ### Parameters
 
@@ -64,16 +67,8 @@ end_time      | 结束时间		   | null为添加后即无失效日期
 
 ### Example Request
 
-```
-{
-	id: "12345678"
-	keyword:"火灾",
-	engines:["google","baidu","bing"],
-	start_time:"1430969776"
-	end_time:"1430969776"
-}
-
-```
+PUT
+https://xxx.jetyun.com/1.1/keywords/210462857140252672
 
 ### Example Result
 
@@ -87,11 +82,13 @@ end_time      | 结束时间		   | null为添加后即无失效日期
 
 ---
 
-## POST keywords/destroy/:id
+## DELETE keywords/:id
 
 ### Resource URL
 
-https://xxx.jetyun.com/1.1/keywords/destroy/:id
+DELETE
+
+https://xxx.jetyun.com/1.1/keywords/:id
 
 ### Parameters
 
@@ -102,12 +99,7 @@ id            | id            |
 
 ### Example Request
 
-```
-{
-	id: "12345678"
-}
-
-```
+https://xxx.jetyun.com/1.1/keywords/210462857140252672
 
 ### Example Result
 
@@ -121,11 +113,11 @@ id            | id            |
 
 ---
 
-## GET keywords/show/:id
+## GET keywords/:id
 
 ### Resource URL
 
-https://xxx.jetyun.com/1.1/keywords/show/:id
+https://xxx.jetyun.com/1.1/keywords/:id
 
 ### Parameters
 
@@ -136,12 +128,9 @@ id            | id            |
 
 ### Example Request
 
-```
 GET
 
-https://xxx.jetyun.com/1.1/keywords/show.json?id=210462857140252672
-
-```
+https://xxx.jetyun.com/1.1/keywords/210462857140252672
 
 ### Example Result
 
@@ -156,13 +145,15 @@ https://xxx.jetyun.com/1.1/keywords/show.json?id=210462857140252672
 
 ```
 
-# 采集
+---
 
-## 关键字
+# 推送数据
+
+## POST /path/xxx
 
 ### Resource URL
 
-/path/casperjs search_xxxx.js keyword="key" page-num="num"
+https://xxx.jetyun.com/1.1/path/xxx
 
 ### Parameters
 
@@ -173,50 +164,39 @@ page-num      | 爬取页数       |
 
 ### Example Request
 
-/path/casperjs search_baidu.js keyword="火灾" page-num="2"
+POST
+
+https://xxx.jetyun.com/1.1/path/xxx
+
+```
+[
+	{
+		search_keyword:"火灾",
+		engine:"baidu",
+		url: "http://news.sina.com.cn/c/2015-05-08/023931806591.shtml",
+		create_at:"2015-05-08 02:39:36",
+		source: "news.sina.com.cn",
+		keywords:"李克强,创业",
+		title: "李克强:加大投入让科学家待遇匹配贡献|李克强|创业_新浪新闻",
+		description: "5月7日，中共中央政治局常委、国务院总理李克强先后来到中国科学院和北京中关村创业大街考察调研。他强调，推动大众创业、万众创新是充分激发亿万群众智慧和创造力的重大改革举措，是实现国家强盛、人民富裕的重要途径，要坚决消除各种束缚和桎梏，让创业创新",
+		og_title: "李克强:加大投入让科学家待遇匹配贡献",
+		og_description: "李克强:加大投入让科学家待遇匹配贡献",
+		content: "5月7日，中共中央政治局常委、国务院总理李克强先后来到中国科学院和北京中关村创业大街考察调研。他强调，推动大众创业、万众创新是充分激发亿万群众智慧和创造力的重大改革举措，是实现国家强盛、人民富裕的重要途径，要坚决消除各种束缚和桎梏，让创业创新......"					
+	},
+	......
+]
+
+```
 
 ### Example Result
 
 | 退出状态 | 字段类型 | 字段说明 |
 |----------|----------|----------|
-| success  |        0 | 正常退出 |
-| error    |        1 | 异常退出 |
+| success  |      200 | 正常退出 |
+| error    |  400-600 | 异常退出 |
 
-### Example Task
-
-```
-{
-	keyword:"",
-	url:["http://aaaaa","http://bb.com","http://cc.com"]
-}
-
-```
 
 ---
-
-## 获取页面
-
-### Resource URL
-
-/path/casperjs  crawler-page.js url="url" path="path"
-
-### Parameters
-
-字段名称       | 中文名称        | 备注
-:-----------: | :-----------: | :-----------:
-url            | 爬取地址           |
-path       | 存储路径         | 
-
-### Example Request
-
-/path/casperjs  crawler-page.js url="http://news.sina.com/" path="baidu/"
-
-### Example Result
-
-| 退出状态 | 字段类型 | 字段说明 |
-|----------|----------|----------|
-| success  |        0 | 正常退出 |
-| error    |        1 | 异常退出 |
 
 
 
