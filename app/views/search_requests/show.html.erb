@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @search_request.keyword %>
+</p>
+
+<p>
+  <strong>Crawl start at:</strong>
+  <%= @search_request.crawl_start_at %>
+</p>
+
+<p>
+  <strong>Crawl end at:</strong>
+  <%= @search_request.crawl_end_at %>
+</p>
+
+<%= link_to 'Edit', edit_search_request_path(@search_request) %> |
+<%= link_to 'Back', search_requests_path %>

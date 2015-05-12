@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # resources :search_requests, only: [:index, :new, :create, :destroy]
+  resources :search_requests
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

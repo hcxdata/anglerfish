@@ -32,6 +32,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'kaminari'
+gem "kaminari-bootstrap", "~> 3.0.1"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-jquery", "~> 2.1.4"
+  gem "rails-assets-bootstrap-sass-official", "~> 3.2.0"
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
