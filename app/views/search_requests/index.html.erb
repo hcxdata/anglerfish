@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>关键字</th>
+      <th>爬取开始时间</th>
+      <th>爬取结束时间</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_requests.each do |search_request| %>
+      <tr>
+        <td><%= search_request.keyword %></td>
+        <td><%= search_request.crawl_start_at %></td>
+        <td><%= search_request.crawl_end_at %></td>
+        <td><%= link_to '删除', search_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '添加关键字', new_search_request_path %>

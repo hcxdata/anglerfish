@@ -1,0 +1,29 @@
+<%= form_for(@search_request) do |f| %>
+  <% if @search_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_request.errors.count, "error") %> prohibited this search_request from being saved:</h2>
+
+      <ul>
+      <% @search_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keyword %><br>
+    <%= f.text_field :keyword %>
+  </div>
+  <div class="field">
+    <%= f.label :crawl_start_at %><br>
+    <%= f.datetime_select :crawl_start_at %>
+  </div>
+  <div class="field">
+    <%= f.label :crawl_end_at %><br>
+    <%= f.datetime_select :crawl_end_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
