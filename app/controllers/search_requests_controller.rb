@@ -1,5 +1,5 @@
 class SearchRequestsController < ApplicationController
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @search_requests = SearchRequest.all
