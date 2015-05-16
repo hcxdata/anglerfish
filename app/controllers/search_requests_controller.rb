@@ -24,8 +24,8 @@ class SearchRequestsController < ApplicationController
   private
     def search_request_params
       attribute_names = [ :keyword, :crawl_start_at, :crawl_end_at ]
-      if params.require(:search_request)
-         params.require(:search_request).permit(attribute_names)
+      if param[:search_request]
+         param[:search_request].permit(attribute_names)
       else
          params.permit(attribute_names)
       end
