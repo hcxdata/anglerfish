@@ -1,4 +1,5 @@
 class BaiduKeywordSearchWorker
+  include Sidekiq::Worker
 
   def perform(search_request_id)
     return unless search_request_id
