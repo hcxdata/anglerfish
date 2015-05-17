@@ -11,5 +11,6 @@
 #
 
 class SearchRequest < ActiveRecord::Base
+  has_many :search_results, class_name: SearchResult, foreign_key: "request_id"
   validates :keyword, presence: true
 end
