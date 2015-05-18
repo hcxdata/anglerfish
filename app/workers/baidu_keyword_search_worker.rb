@@ -22,6 +22,9 @@ class BaiduKeywordSearchWorker
       search_result = search_request.search_results.new
       search_result.sync! data
     end
+
+    search_request.status = 1
+    search_request.save!
   end
 
   def parser_search_content(search_url, wd, pl = false)
