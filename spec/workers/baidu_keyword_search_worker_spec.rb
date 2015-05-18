@@ -6,7 +6,7 @@ RSpec.describe BaiduKeywordSearchWorker, type: :worker do
     before(:each){ subject.perform(request.id) }
 
     context "with success responese" do
-      it {expect(request.search_results.count).to eq 16}
+      it {expect(request.results.count).to eq 16}
     end
 
   end

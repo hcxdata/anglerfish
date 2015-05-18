@@ -19,12 +19,13 @@ class BaiduKeywordSearchWorker
     end
 
     datas["search_content"].each do |data|
-      search_result = search_request.search_results.new
+      search_result = search_request.results.new
       search_result.sync! data
     end
 
-    search_request.status = 1
+    search_request.status = "crawled"
     search_request.save!
+    puts search_request.to_json
   end
 
   def parser_search_content(search_url, wd, pl = false)

@@ -15,7 +15,7 @@
 #
 
 class SearchResult < ActiveRecord::Base
-  belongs_to :search_request, class_name: SearchRequest, foreign_key: "request_id"
+  belongs_to :request, class_name: SearchRequest, foreign_key: "request_id"
 
   def sync!(data)
     self.attributes = data.slice("keyword", "engine", "crawl_at", "url", "title", "description")
