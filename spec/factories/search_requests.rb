@@ -8,6 +8,7 @@
 #  crawl_end_at   :datetime
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  status         :string           default("pending")
 #
 
 FactoryGirl.define do
