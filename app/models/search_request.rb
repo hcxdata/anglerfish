@@ -13,6 +13,6 @@
 
 class SearchRequest < ActiveRecord::Base
   has_many :results, class_name: SearchResult, foreign_key: "request_id"
-  symbolize :status, :in => [:pending, :crawled], methods: true, default: :pending
+  symbolize :status, in: [:pending, :crawled], methods: true, default: :pending
   validates :keyword, presence: true
 end
