@@ -21,6 +21,7 @@ class BaiduKeywordSearchWorker
     datas["search_content"].each do |data|
       search_result = search_request.results.new
       search_result.sync! data
+      HtmlCrawlWorker.perform_async(search_result.id) if search_result.persisted?
     end
 
     search_request.status = "crawled"

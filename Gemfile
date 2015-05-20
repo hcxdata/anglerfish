@@ -60,6 +60,7 @@ group :development, :test do
   gem 'factory_girl_rails', '4.5.0'
 
   gem "symbolize", "4.5.2"
+  gem "faraday", "~> 0.9.1"
 end
 
 
