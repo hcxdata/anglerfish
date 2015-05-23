@@ -39,6 +39,9 @@ gem "kaminari-bootstrap", "~> 3.0.1"
 gem "sidekiq", "3.3.4"
 gem "sinatra", ">= 1.4.4"
 
+
+gem "fume-settable", "0.0.3"
+
 source 'https://rails-assets.org' do
   gem "rails-assets-jquery", "~> 2.1.4"
   gem "rails-assets-bootstrap-sass-official", "~> 3.2.0"

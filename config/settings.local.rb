@@ -1,0 +1,1 @@
+settings.baidu_push_url = "http://news.jetyun.com:18080/push_datas/baidu"
