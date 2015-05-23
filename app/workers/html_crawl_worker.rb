@@ -24,7 +24,7 @@ class HtmlCrawlWorker
 
   def push_datas(datas)
     conn = build_connection
-    conn.post( Project.baidu_push_url ) do |req|
+    conn.post( "#{Project.baidu_push_url}/html_content" ) do |req|
       req.headers['Content-Type'] = 'application/json'
       req.body = datas.to_json
     end
